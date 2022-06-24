@@ -8,3 +8,54 @@
   margin-inline: auto;
   padding-block: var(--container-padding);
 }
+
+.layout-grid {
+  --min: 25ch;
+  --gap: 1rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// make footer sticky
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  > * + * {
+    margin-block-start: max(4rem, 8vh);
+  }
+}
+
+@media (min-width: 100ch) {
+  body {
+    grid-template-areas:
+    "header main"
+    "header footer";
+    grid-template-columns: fit-content(25ch) 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  main {
+    margin-block-start: 3vh;
+  }
+}
