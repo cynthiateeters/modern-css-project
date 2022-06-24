@@ -10,7 +10,8 @@
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy"
+    "build": "npm-run-all build:sass build:eleventy",
+    "hint": "hint http://localhost:8080"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,11 @@
     "sass": "^1.49.7"
   },
   "browserslist": [
-    "> 0.5%",
+    "> 1% or last 2 versions",
     "not IE 11"
-  ]
+  ],
+  "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.2.12",
+    "hint": "^7.0.1"
+  }
 }

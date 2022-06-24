@@ -1,0 +1,60 @@
+/*
+Derived from Andy Bell's Modern CSS Reset
+@link https://piccalil.li/blog/a-modern-css-reset/
+🟣 = additions by Stephanie Eckles
+✨ = additions from https://www.joshwcomeau.com/css/custom-css-reset
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  /* 🟣 Set base font-family */
+  font-family: system-ui, sans-serif;
+}
+
+/*
+ ✨ Set media elements to be block elements
+ & make "replaced elements" behave and not growable
+ beyond its parent container
+*/
+
+img, picture, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+ ✨ Make form inputs follow typographical styles of
+ the rest of the page
+*/
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+ ✨ Allow a word break inside a long word
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
